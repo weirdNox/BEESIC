@@ -1,0 +1,145 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------ */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    background: #F5F5F5;
+}
+
+#content {
+    padding-bottom: 20px;
+    padding-top: 520px;
+}
+
+#banner {
+    position: absolute;
+    top: 0;
+    height: 600px;
+    width: 100%;
+    background-image: url(./images/earth.png);
+    background-position: center center;
+    z-index: -1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#banner h1 {
+    color: white;
+    font-size: 80px;
+    padding-top: 100px;
+    text-align: center;
+    font-weight: 200;
+}
+
+#banner h3 {
+    color: #9E9E9E;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 200;
+}
+
+@media (max-width: 900px) {
+    #banner h1 {
+        font-size: 50px;
+    }
+
+    #banner h3 {
+        font-size: 25px;
+    }
+}
+
+#card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 950px;
+    background: #fff;
+    min-height: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 10px 24px rgba(160, 151, 151, 0.65);
+}
+
+#card div.info-section {
+    padding: 40px;
+}
+
+div.info-section ~ div.info-section {
+    border-top: 1px solid #E0E0E0;
+}
+
+#card h1 {
+    font-size: 45px;
+    margin-bottom: 24px;
+    font-weight: 200;
+}
+
+#card h3 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 16px;
+}
+
+#card p {
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    margin: 0 10px 16px 10px;
+    font-weight: 400;
+}
+
+.emph {
+    font-weight: bold;
+    font-style: italic;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
