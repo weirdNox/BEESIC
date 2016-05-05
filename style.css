@@ -42,15 +42,117 @@ table {
 	border-spacing: 0;
 }
 
-/* ------ */
-
-html {
-    font-size: 16px;
-}
+/* ------------- */
 
 body {
     font-family: 'Roboto', 'Helvetica', sans-serif;
     background: #F5F5F5;
+    overflow-x: hidden;
+}
+
+
+.page {
+    width: 100%;
+    max-width: 1300px;
+    min-height: calc(100vh - 178px);
+}
+
+.card {
+    box-sizing: border-box;
+    min-width: 200px;
+    margin: 20px auto;
+    min-height: 200px;
+    background: #fff;
+    box-shadow: 0 0 24px rgba(160, 151, 151, 0.65);
+    border-radius: 2px;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .card {
+        margin: 0 auto;
+    }
+}
+
+.card h1 {
+    font-size: 45px;
+    margin-bottom: 24px;
+    font-weight: 200;
+}
+
+.card h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.card h4 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.card h5 {
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    margin: 0 10px 16px 10px;
+    font-weight: 400;
+    color: rgba(0,0,0,.87);
+}
+
+.card div.info-section {
+    padding: 40px;
+}
+
+.card div.info-section ~ div.info-section {
+    border-top: 1px solid #E0E0E0;
+}
+
+.card-grid {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-grid > .card {
+    padding: 15px;
+    margin: 0;
+    width: calc(25% - 16px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .card-grid > .card {
+        width: calc(33.33333% - 16px);
+    }
+}
+
+@media (max-width: 900px) {
+    .card-grid > .card {
+        width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 620px) {
+    .card-grid > .card {
+        width: calc(100% - 16px);
+    }
+}
+
+.person img {
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 #landing-container {
@@ -118,43 +220,10 @@ body {
     }
 }
 
-#landing-card {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 950px;
-    background: #fff;
+#landing-container > card {
     min-height: 400px;
     margin: 0 auto;
     box-shadow: 0px 10px 24px rgba(160, 151, 151, 0.65);
-}
-
-#landing-card div.info-section {
-    padding: 40px;
-}
-
-#landing-card div.info-section ~ div.info-section {
-    border-top: 1px solid #E0E0E0;
-}
-
-#landing-card h1 {
-    font-size: 45px;
-    margin-bottom: 24px;
-    font-weight: 200;
-}
-
-#landing-card h3 {
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 16px;
-}
-
-#landing-card p {
-    font-size: 15px;
-    line-height: 24px;
-    margin-bottom: 16px;
-    margin: 0 10px 16px 10px;
-    font-weight: 400;
-    color: rgba(0,0,0,.87);
 }
 
 #footer {
@@ -191,4 +260,109 @@ a {
 
 a:hover {
     color: #2E7D32;
+}
+
+header {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #4CAF50;
+}
+
+header > a,
+#drawer-button {
+    color: #757575;
+}
+
+header > a:first-child {
+    font-size: 24px;
+}
+
+div.spacer {
+    flex-grow: 1;
+}
+
+header > a:not(:first-child),
+header > div {
+    margin-left: 20px;
+}
+
+#drawer-button {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    header > a:not(:first-child) {
+        display: none;
+    }
+
+    #drawer-button {
+        display: block;
+    }
+}
+
+#drawer-button:hover {
+    color: #2E7D32;
+}
+
+#drawer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 240px;
+    height: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    border-left: 2px solid #4CAF50;
+    background: #fafafa;
+    transform: translateX(250px);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: transform;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+#drawer.show {
+    transform: translateX(0);
+}
+
+#drawer > a {
+    color: #757575;
+    padding: 15px 15px;
+    text-align: right;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+#drawer > a:hover {
+    color: #2E7D32;
+    background-color: #E0E0E0;
+}
+
+#obfuscator {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease-out;
+}
+
+#obfuscator.visible {
+    pointer-events: auto;
+    opacity: 1;
 }
