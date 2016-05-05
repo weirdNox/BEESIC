@@ -53,50 +53,72 @@ body {
     background: #F5F5F5;
 }
 
-#content {
-    padding-bottom: 20px;
-    padding-top: 520px;
+#landing-container {
+    padding-top: 530px;
+    padding-bottom: 40px;
 }
 
-#banner {
+#landing-banner::before {
+    content: "";
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: opacity 2s ease-out;
+    z-index: -1;
+}
+
+#landing-banner {
     position: absolute;
     top: 0;
     height: 600px;
     width: 100%;
-    background-image: url(./images/earth.png);
-    background-position: center center;
+    background-color: #757575;
     z-index: -1;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
 }
 
-#banner h1 {
+#landing-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #4CAF50;
+}
+
+#landing-banner h1 {
     color: white;
     font-size: 80px;
     padding-top: 100px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 300;
 }
 
-#banner h3 {
+#landing-banner h3 {
     color: #9E9E9E;
     font-size: 34px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 300;
+    padding-top: 15px;
 }
 
 @media (max-width: 900px) {
-    #banner h1 {
+    #landing-banner h1 {
         font-size: 50px;
     }
 
-    #banner h3 {
+    #landing-banner h3 {
         font-size: 25px;
     }
 }
 
-#card {
+#landing-card {
     box-sizing: border-box;
     width: 100%;
     max-width: 950px;
@@ -106,32 +128,55 @@ body {
     box-shadow: 0px 10px 24px rgba(160, 151, 151, 0.65);
 }
 
-#card div.info-section {
+#landing-card div.info-section {
     padding: 40px;
 }
 
-div.info-section ~ div.info-section {
+#landing-card div.info-section ~ div.info-section {
     border-top: 1px solid #E0E0E0;
 }
 
-#card h1 {
+#landing-card h1 {
     font-size: 45px;
     margin-bottom: 24px;
     font-weight: 200;
 }
 
-#card h3 {
+#landing-card h3 {
     font-size: 24px;
     font-weight: normal;
     margin-bottom: 16px;
 }
 
-#card p {
-    font-size: 17px;
+#landing-card p {
+    font-size: 15px;
     line-height: 24px;
     margin-bottom: 16px;
     margin: 0 10px 16px 10px;
     font-weight: 400;
+    color: rgba(0,0,0,.87);
+}
+
+#footer {
+    background: #fff;
+    padding: 32px;
+    position: relative;
+    font-size: 17px;
+    color: #616161;
+}
+
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #4CAF50;
+}
+
+#footer a {
+    margin-left: 5px;
 }
 
 .emph {
@@ -142,4 +187,8 @@ div.info-section ~ div.info-section {
 a {
     color: #4CAF50;
     text-decoration: none;
+}
+
+a:hover {
+    color: #2E7D32;
 }
