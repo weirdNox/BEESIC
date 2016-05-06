@@ -149,6 +149,54 @@ body {
     }
 }
 
+.parallax-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    left: -40px;
+    width: calc(100% + 80px);
+    margin-bottom: 20px;
+}
+
+.parallax {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.parallax img {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    max-width: 1600px;
+    min-height: 100%;
+    left: 50%;
+    transform: translate3D(-50%, 0, 0);
+}
+
+@media (max-width: 900px) {
+    .parallax img {
+        max-width: 1000px;
+    }
+
+    .parallax-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 620px) {
+    .parallax img {
+        max-width: 700px;
+    }
+
+    .parallax-wrapper {
+        height: 200px;
+    }
+}
+
 .person img {
     height: 150px;
     border-radius: 50%;
@@ -224,6 +272,10 @@ body {
     min-height: 400px;
     margin: 0 auto;
     box-shadow: 0px 10px 24px rgba(160, 151, 151, 0.65);
+}
+
+#landing-container > .card-grid {
+    max-width: 1200px;
 }
 
 #footer {
@@ -323,7 +375,7 @@ header > div {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
     border-left: 2px solid #4CAF50;
     background: #fafafa;
-    transform: translateX(250px);
+    transform: translate3D(250px, 0, 0);
     transform-style: preserve-3d;
     will-change: transform;
     transition-duration: .2s;
@@ -335,7 +387,7 @@ header > div {
 }
 
 #drawer.show {
-    transform: translateX(0);
+    transform: translate3D(0, 0, 0);
 }
 
 #drawer > a {
@@ -378,28 +430,7 @@ header > div {
 }
 
 .info-section li:before{
-    font-size: 20px;    
+    font-size: 20px;
     content: "• ";
     color: #4CAF50;
-}
-
-#preview{
-    background-image: url("images/quadro.png");
-    min-height: 400px;
-    background-attachment: fixed;
-    background-position: center center;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-}
-
-#preview-caixa{
-    background-image: url("images/caixa.png");
-    min-height: 400px;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    left: 0px;
-    right: 0px;
 }
