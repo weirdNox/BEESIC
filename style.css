@@ -366,3 +366,40 @@ header > div {
     pointer-events: auto;
     opacity: 1;
 }
+
+.info-section ul{
+    padding-left: 40px;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    margin: 0 10px 16px 10px;
+    font-weight: 400;
+    color: rgba(0,0,0,.87);
+}
+
+.info-section li:before{
+    font-size: 20px;    
+    content: "• ";
+    color: #4CAF50;
+}
+
+#preview{
+    background-image: url("images/quadro.png");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#preview-caixa{
+    background-image: url("images/caixa.png");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
