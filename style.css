@@ -78,6 +78,28 @@ body {
     border-top: 1px solid #E0E0E0;
 }
 
+.card .title {
+    padding: 16px;
+    display: flex;
+    height: 170px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.card .title h3 {
+    align-self: flex-end;
+    margin: 0;
+}
+
+.card .supporting-text {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 16px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 16px;
+    text-align: left;
+}
+
 .card-grid {
     width: 100%;
     margin: 0 auto;
@@ -87,7 +109,6 @@ body {
 }
 
 .card-grid > .card {
-    padding: 15px;
     margin: 0;
     width: calc(25% - 16px);
     text-align: center;
@@ -135,6 +156,7 @@ body {
     min-width: 100%;
     max-width: calc(100% + 100px);
     min-height: 100%;
+    display: none;
 }
 
 @media (max-width: 900px) {
@@ -153,6 +175,10 @@ body {
     .parallax {
         height: 150px;
     }
+}
+
+.person {
+    padding: 15px;
 }
 
 .person img {
@@ -226,6 +252,10 @@ body {
     }
 }
 
+#landing-container > .page {
+    margin-bottom: 40px;
+}
+
 #landing-container > card {
     min-height: 400px;
     margin: 0 auto;
@@ -234,14 +264,42 @@ body {
 
 #landing-container > .card-grid {
     max-width: 1200px;
+    width: 94%;
+}
+
+#landing-container > .card-grid span {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+#landing-container > .card-grid .card {
+    transition: transform 0.1s ease-out;
+}
+
+#landing-container > .card-grid .card:hover{
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+@media (max-width: 550px) {
+    #landing-container > .card-grid .card:hover{
+        transform: none;
+    }
 }
 
 #footer {
+    display: flex;
+    align-items: center;
     background: #fff;
-    padding: 32px;
+    padding: 15px 32px;
     position: relative;
     font-size: 17px;
     color: #616161;
+    min-height: 64px;
 }
 
 #footer::before {
@@ -254,8 +312,35 @@ body {
     background: #4CAF50;
 }
 
-#footer a {
+#footer #links a {
     margin-left: 5px;
+}
+
+#footer #logos {
+    display: flex;
+    margin-left: auto;
+    height: 100%;
+}
+
+#footer #logos img {
+    margin-left: 15px;
+    max-height: 40px;
+}
+
+@media (max-width: 550px) {
+    #footer {
+        flex-direction: column;
+    }
+
+    #footer #logos {
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 0 0 0;
+    }
+
+    #footer #logos img {
+        margin: 0;
+    }
 }
 
 .emph {
