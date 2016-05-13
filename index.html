@@ -25,32 +25,50 @@
             </div>
 
             <div class="card page">
+                <div class="info-section" id="countdown">
+                    <h1>Tempo para o lançamento</h1>
+                    <h2><span id="cSign">T-</span><span id="cDay">00</span>:<span id="cHour">00</span>:<span id="cMinute">00</span>:<span id="cSecond">00</span></h2>
+                    <p id="cDate">20 de maio de 2016</p>
+                </div>
                 <div class="info-section">
                     <h1>Informações gerais</h1>
                     <h3>Quem somos?</h3>
-                    <p>Somos alunos da Escola Secundária Inês de Castro e voluntariamo-nos para fazer este balão de grande altitude.
-                        <a href="about-us.html">Sabe mais sobre a nossa equipa!</a></p>
+                    <p>
+                        Somos alunos da Escola Secundária Inês de Castro e voluntariamo-nos para fazer este balão de grande altitude.
+                        <a href="about-us.html">Sabe mais sobre a nossa equipa!</a>
+                    </p>
                 </div>
                 <div class="info-section">
                     <h3>O que fizemos?</h3>
-                    <p>Nós fizemos um balão estratosférico - ou seja, um balão cheio de hélio
+                    <p>
+                        Nós fizemos um balão estratosférico - ou seja, um balão cheio de hélio
                         que leva uma cápsula (com computador de bordo, sensores, GPS, rádio e câmaras de vídeo)
                         e sobe até à estratosfera, atingindo os 30.000 metros de altura (isto é
-                        <span class="emph">3x</span> a altura média a que andam os aviões!!).</p>
-                    <p>A data de lançamento prevista é 20 de maio.</p>
+                        <span class="emph">3x</span> a altura média a que andam os aviões!!).
+                    </p>
+                    <p>
+                        A data de lançamento prevista é <span class="emph">20 de maio</span>. Se, por qualquer eventualidade, o
+                        lançamento tiver de ser adiado, a segunda data é 23 de maio.
+                    </p>
                 </div>
                 <div class="info-section">
                     <h3>Por que é que isto importa?</h3>
-                    <p>Para além de ser importante para quem participa no projeto e para a própria escola,
+                    <p>
+                        Para além de ser importante para quem participa no projeto e para a própria escola,
                         toda a comunidade pode beneficiar deste projeto! Toda a informação que obtivermos com esta experiência
-                        vai estar disponível para consulta.</p>
-                    <p>Para além da informação obtida, o software que corre no nosso computador
+                        vai estar disponível para consulta.
+                    </p>
+                    <p>
+                        Para além da informação obtida, o software que corre no nosso computador
                         de bordo e todos os recursos de suporte (ambos desenvolvido por nós) estão também disponível na nossa página do <a href="https://github.com/weirdnox/BEESIC">github</a>,
                         por isso, se estiverem a pensar em fazer um balão estratosférico e estiverem com problemas,
                         dêem uma vista de olhos! Até este site, feito inteiramente de raiz pela equipa, é open source. Encontra-se
-                        tudo ao abrigo da <a href="https://github.com/weirdNox/BEESIC/blob/master/LICENSE">licensa liberal MIT.</a></p>
-                    <p>Finalmente, a construção da cápsula e os problemas com que nos deparamos estão catalogados aqui no site
-                        para não terem de cometer os mesmos erros que nós ;)</p>
+                        tudo ao abrigo da <a href="https://github.com/weirdNox/BEESIC/blob/master/LICENSE">licensa liberal MIT.</a>
+                    </p>
+                    <p>
+                        Finalmente, a construção da cápsula e os problemas com que nos deparamos estão catalogados aqui no site
+                        para não terem de cometer os mesmos erros que nós ;)
+                    </p>
                 </div>
             </div>
 
@@ -121,6 +139,41 @@
              styleElem.innerHTML = "#landing-banner::before {background-image: url("+img.src+"); opacity: 1;}";
          };
          img.src = "https://cloud.githubusercontent.com/assets/3155049/15076441/9837cbd6-13a1-11e6-8073-026c7622ca06.png";
+
+         function leftPad(str, pad, char) {
+             str = str + "";
+             while(str.length < pad) str = char + str;
+             return str;
+         }
+
+         var date = Date.UTC(2016, 4, 20, 8, 30, 0);
+         var sign = document.querySelector("#cSign"), days = document.querySelector("#cDay"), hours = document.querySelector("#cHour"), minutes = document.querySelector("#cMinute"), seconds = document.querySelector("#cSecond");
+         var _second = 1000;
+         var _minute = _second * 60;
+         var _hour = _minute * 60;
+         var _day = _hour * 24;
+         document.querySelector("#cDate").innerText = new Date(date).toLocaleDateString('pt', {
+             weekday: 'short',
+             day : 'numeric',
+             month : 'long',
+             year : 'numeric',
+             hour: 'numeric',
+             minute: 'numeric'
+         });
+         function updateClock() {
+             var current = Date.now();
+             var distance = date - current;
+             if(distance < 0) {
+                 sign.innerText = "T+";
+                 distance = -distance;
+             }
+             days.innerText = leftPad(Math.floor(distance / _day), 2, "0");
+             hours.innerText = leftPad(Math.floor((distance % _day) / _hour), 2, "0");
+             minutes.innerText = leftPad(Math.floor((distance % _hour) / _minute), 2, "0");
+             seconds.innerText = leftPad(Math.floor((distance % _minute) / _second), 2, "0");
+         }
+         updateClock();
+         setInterval(updateClock, 1000);
         </script>
     </body>
 </html>
