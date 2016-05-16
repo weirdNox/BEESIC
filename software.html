@@ -80,7 +80,29 @@
             </div>
             <div class="info-section">
                 <h3>Computador de bordo - Configuração do Linux e bases</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15315191/00977acc-1c0e-11e6-8f3f-c61d1a28bdf8.jpg">
+                </div>
                 <p>
+                    Para esta parte é sempre preciso um bocadinho de magia negra! Usámos a distribuição Jessie Lite do Raspbian e apenas instalámos os mínimos para consumir pouco. Depois
+                    tivemos de configurar tudo! Usámos o systemd para iniciar o nosso programa mal o RasPi iniciasse e configurámos o NTP para
+                    não tentar ir buscar as horas a lado nenhum pois não há internet na estratosfera (e se não fizéssemos isto, iríamos ter horas bem configuradas durante os testes pois tínhamos internet).
+                    Também ativámos o watchdog para fazer restart do RasPi na eventualidade de ele encravar.
+                </p>
+                <ul>
+                    Algumas ferramentas que tivemos de instalar:
+                    <li>gpsd</li>
+                    <li>gpsd-clients</li>
+                    <li>python-gps</li>
+                    <li>espeak</li>
+                    <li>watchdog</li>
+                </ul>
+                <p>
+                    Depois de termos o sistema operativo configurado, começámos a trabalhar no nosso programa. Começámos por fazer um sistema de logging para podermos saber de tudo caso alguma coisa falhasse
+                    e depois começamos a pensar em maneiras de conseguir perceber o que se está a passar no RasPi sem termos contacto direto (no lançamento não há monitores nem ligação ethernet para ninguém!).
+                    Chegámos à conclusão que, uma vez que vamos ter transmissão de vídeo em direto, podíamos usar a faixa de áudio para comunicar! E como? Com um speech synthesizer! Sim, temos um
+                    <span class="emph">sintetizador de voz</span> que comunica eventuais erros que aconteçam e, para além disso, está constantemente a <span class="emph">dizer as coordenadas provenientes do
+                    GPS!</span> Assim, na altura do lançamento, sabemos quais são os sitemas que falharam e os que iniciaram e podemos simplesmente ouvir as coordenadas para não estarmos sempre a ler.
                 </p>
             </div>
             <div class="info-section">
@@ -100,8 +122,13 @@
                 </div>
                 <p>
                     Apesar de termos uma câmara analógica para transmissão de vídeo em direto, também temos uma câmara digital ligada ao RasPi para gravarmos o vídeo da viagem.
-                    Esta parte também foi muito simples de fazer, uma vez que apenas usamos a câmara oficial do RasPi. Criamos mais uma thread no programa que grava vídeos para o
+                    Esta parte também foi muito simples de fazer, uma vez que apenas usamos a câmara oficial do RasPi. Criamos agora uma thread que grava vídeos para o
                     cartão de memória regularmente.
+                </p>
+                <p>
+                    Uma parte engraçada da câmara é a luzinha que ela tem quando está a gravar. Depois de olharmos para isso, pensámos "Ela tem de ir desligada para não fazer reflexo no vidro, e já agora
+                    podíamos aproveitar e fazer alguma coisa com ela..."; e foi precisamente isso que fizemos! Quando o RasPi liga, para termos mais um fator de confirmação, a luz pisca 5x e depois
+                    desliga-se. Assim sabemos quando o RasPi começa a correr o nosso software!
                 </p>
             </div>
             <div class="info-section">
@@ -110,9 +137,9 @@
                     <img src="https://cloud.githubusercontent.com/assets/11081628/15297863/41cd4f00-1b94-11e6-907d-794c32d33ea4.jpg">
                 </div>
                 <p>
-                    Esta parte foi a mais difícil porque estávamos a ter erros aleatórios sem os conseguirmos reproduzir e muito estranhos. Começamos por instalar as ferramentas necessárias
-                    para a utilização do GPS (gpsd, gpsd-clients e python-gps). Depois, de muitas tentativas e erros, descobrimos que o nosso GPS estava localizado no /dev/ttyACM0
-                    e usamos essa localização para inicar o gpsd. Também descobrimos que por vezes tínhamos de reiniciar o sistema de GPS e por isso adicionamos lógica para fazer isso regularmente.
+                    Esta parte foi a mais difícil porque estávamos a ter erros aleatórios sem os conseguirmos reproduzir e muito estranhos. Depois, de muitas tentativas e erros,
+                    descobrimos que o nosso GPS estava localizado no /dev/ttyACM0 e usamos essa localização para inicar o gpsd. Também descobrimos que por vezes tínhamos de
+                    reiniciar o sistema de GPS e por isso adicionamos lógica para fazer isso regularmente.
                 </p>
                 <p>
                     Finalmente, para sincronizar as horas com o relógio do GPS usámos várias alternativas. Começámos por usar o NTP, pois este supostamente tem em conta os delays e corrige
@@ -121,6 +148,11 @@
                 <p>
                     Como uma imagem vale mais que mil palavras, então o código utilizado é muito melhor para descrever a solução utilizada, por isso <a target="_blank" href="https://github.com/weirdNox/BEESIC/tree/master/sky/scripts">dêem uma vista de olhos</a>!
                 </p>
+                <p>
+                    Momento engraçado: tivemos de reduzir o cabo do GPS para não ficar tanto cabo no meio da caixa... e por momentos pensámos que tínhamos estragado tudo! Dentro do cabo USB
+                    há 4 cabos mais pequenos e, ao soldar duas pontas de dois cabos diferentes, estava a ficar um desastre! A solução foi soldar à parte metálica final diretamente e não
+                    soldar as duas pontas de dois cabos.
+                </p>
             </div>
             <div class="info-section">
                 <h3>Website</h3>
@@ -128,6 +160,14 @@
                     <img src="https://cloud.githubusercontent.com/assets/11081628/15299807/cef490d8-1b9d-11e6-836c-b3b1bca9653d.png">
                 </div>
                 <p>
+                    E para finalizar, ainda tivemos de fazer este site para o projeto! O interessante é que, como queríamos fazer um projeto 100% desenvolvido por nós, foi precisamente isso que fizemos:
+                    <span class="emph">não usamos framework nenhuma e desenvolvemos tudo de raiz!</span> E sim!, este site também é Open Source como o resto do projeto e
+                    <a target="_blank" href="https://github.com/weirdNox/BEESIC/tree/gh-pages">está disponível no branch gh-pages do nosso repositório</a>.
+                </p>
+                <p>
+                    Para além de ter sido feito todo por nós, foi feito num curto espaço de tempo! Como podem verificar no
+                    <a target="_blank" href="https://github.com/weirdNox/BEESIC/commits/gh-pages">log do repositório</a>, começou a ser desenvolvido a 5 de maio e tinha de estar pronto
+                    a tempo do lançamento (20 de maio)! Eu, pessoalmente, não estava à espera que ficasse com tão bom aspeto como ficou e acho que é a cereja no topo do bolo deste projeto!
                 </p>
             </div>
         </div>

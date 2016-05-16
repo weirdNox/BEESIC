@@ -79,31 +79,21 @@ body {
 
 .info-section ul {
     list-style: none;
-    padding: 0;
-    font-size: 15px;
-    line-height: 24px;
-    margin-bottom: 16px;
-    font-weight: 400;
-    color: rgba(0,0,0,.87);
 }
 
-.info-section ul li {
-    padding-left: 10px;
-    text-indent: -12px;
+.info-section ul,
+.info-section ol {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0 0 16px 10px;
+    font-weight: 400;
+    color: rgba(0,0,0,.87);
 }
 
 .info-section ul li::before {
-    font-size: 20px;
     content: "• ";
     color: #4CAF50;
-}
-
-.info-section li {
-    font-size: 15px;
-    line-height: 24px;
-    margin: 0 10px 0 10px;
-    font-weight: 400;
-    color: rgba(0,0,0,.87);
+    font-size: 80%;
 }
 
 @media (max-width: 620px) {
@@ -122,7 +112,8 @@ body {
     .card p {
         font-size: 14px;
     }
-    .info-section li {
+    .info-section ul,
+    .info-section ol {
         font-size: 14px;
     }
     .card div.info-section {
@@ -524,7 +515,7 @@ header > div {
     color: rgba(0, 0, 0, 0.6);
 }
 
-#countdown h2 {
+#countdown #counter {
     font-size: 50px;
     font-weight: 200;
     margin: 0;
@@ -533,5 +524,8 @@ header > div {
 @media (max-width: 550px) {
     #countdown h1 {
         font-size: 40px;
+    }
+    #countdown #counter {
+        font-size: 30px;
     }
 }

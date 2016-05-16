@@ -27,7 +27,7 @@
             <div class="card page">
                 <div class="info-section" id="countdown">
                     <h1>Tempo para o lançamento</h1>
-                    <h2><span id="cSign">T-</span><span id="cDay">00</span>:<span id="cHour">00</span>:<span id="cMinute">00</span>:<span id="cSecond">00</span></h2>
+                    <div id="counter"><span id="cSign">T-</span><span id="cDay">00</span>:<span id="cHour">00</span>:<span id="cMinute">00</span>:<span id="cSecond">00</span></div>
                     <p id="cDate">20 de maio de 2016</p>
                 </div>
                 <div class="info-section">
@@ -39,12 +39,18 @@
                     </p>
                 </div>
                 <div class="info-section">
-                    <h3>O que fizemos?</h3>
+                    <h3>Sobre que é este projeto?</h3>
                     <p>
-                        Nós fizemos um balão estratosférico - ou seja, um balão cheio de hélio
+                        Este projeto tinha como objetivo fazer um balão estratosférico - ou seja, um balão cheio de hélio
                         que leva uma cápsula (com computador de bordo, sensores, GPS, rádio e câmaras de vídeo)
                         e sobe até à estratosfera, atingindo os 30.000 metros de altura (isto é
                         <span class="emph">3x</span> a altura média a que andam os aviões!!).
+                    </p>
+                    <p>
+                        No entanto, e para salientar a grande importância deste projeto, é que ele se extendeu em imensos ramos da engenharia! Para além de construirmos a cápsula,
+                        tivemos de programar e configurar o computador de bordo, ter em atenção tudo o que fizemos (temos limites de peso, por exemplo), fazer os cálculos necessários e
+                        até tivemos de fazer este site! Há esta ligação incrível de eletrónica, software e física que torna este projeto especial, e quando chegamos ao fim, podemos
+                        dizer que <span class="emph">foi feito totalmente por nós.</span>
                     </p>
                     <p>
                         A data de lançamento prevista é <span class="emph">20 de maio</span>. Se, por qualquer eventualidade, o
@@ -60,14 +66,14 @@
                     </p>
                     <p>
                         Para além da informação obtida, o software que corre no nosso computador
-                        de bordo e todos os recursos de suporte (ambos desenvolvido por nós) estão também disponível na nossa página do <a href="https://github.com/weirdnox/BEESIC">Github</a>,
+                        de bordo e todos os recursos de suporte (ambos desenvolvido por nós) estão também disponíveis na nossa página do <a href="https://github.com/weirdnox/BEESIC">Github</a>,
                         por isso, se estiverem a pensar em fazer um balão estratosférico e estiverem com problemas,
                         dêem uma vista de olhos! Até este site, feito inteiramente de raiz pela equipa, é open source. Encontra-se
                         tudo ao abrigo da <a href="https://github.com/weirdNox/BEESIC/blob/master/LICENSE">licensa liberal MIT.</a>
                     </p>
                     <p>
                         Finalmente, a construção da cápsula e os problemas com que nos deparamos estão catalogados aqui no site
-                        para não terem de cometer os mesmos erros que nós ;)
+                        para não terem de cometer os mesmos erros que nós!
                     </p>
                 </div>
             </div>
@@ -102,7 +108,7 @@
                 </div>
                 <div class="card">
                     <a href="./software.html"><span></span></a>
-                    <div class="title" style="background-image: url(http://ingridwu.dmmdmcfatter.com/wp-content/uploads/2015/01/placeholder.png)">
+                    <div class="title" style="background-image: url(https://cloud.githubusercontent.com/assets/11081628/15297694/60b90d6a-1b93-11e6-8402-80a98042da64.jpg)">
                         <h3>Software</h3>
                     </div>
                     <div class="supporting-text">
@@ -166,6 +172,9 @@
              if(distance < 0) {
                  sign.innerText = "T+";
                  distance = -distance;
+             }
+             else {
+                 sign.innerText = "T-";
              }
              days.innerText = leftPad(Math.floor(distance / _day), 2, "0");
              hours.innerText = leftPad(Math.floor((distance % _day) / _hour), 2, "0");
