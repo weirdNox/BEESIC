@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+        <meta name="description" content="Balão estratosférico ESIC - Software">
+        <title>Software | Balão estratosférico ESIC</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700italic,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="./index.html">Balão estratosférico ESIC</a>
+            <div class="spacer"></div>
+            <a href="./about.html">Sobre o projeto</a>
+            <a href="./about-us.html">Sobre nós</a>
+            <a href="./capsule.html">Construção</a>
+            <a href="./software.html">Software</a>
+            <a href="./data.html">Dados</a>
+            <div id="drawer-button"><i class="fa fa-bars fa-lg"></i></div>
+        </header>
+
+        <div id="drawer">
+            <a href="./about.html">Sobre o projeto</a>
+            <a href="./about-us.html">Sobre nós</a>
+            <a href="./capsule.html">Construção</a>
+            <a href="./software.html">Software</a>
+            <a href="./data.html">Dados</a>
+        </div>
+
+        <div class="card page">
+            <div class="info-section">
+                <h1>Desenvolvimento do software</h1>
+                <p>Todo o software desenvolvido por nós é Open Source está disponível na <a target="_blank" href="https://github.com/weirdNox/BEESIC">nossa página do Github</a>.</p>
+                <h3>Computador de bordo - Comunicação</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15297693/60b7e6f6-1b93-11e6-98da-ece329cde470.jpg">
+                </div>
+                <p>
+                    Antes de qualquer trabalho ser feito no Raspberry Pi 2 (RasPi), houve diversos problemas em simplemente comunicar com ele. O RasPi tem 2 saídas de vídeo, HDMI e vídeo composto analógico.
+                    O problema era que na escola apenas tínhamos monitores com entrada VGA. Testámos várias alternativas diferentes até conseguirmos programá-lo estável e eficientemente.
+                </p>
+                <div class="info-section">
+                    <h5>Usar adaptador HDMI-VGA <i class="fa fa-times" aria-hidden="true"></i></h5>
+                    <p>
+                        Esta maneira foi rapidamente descartada, uma vez que o adaptador não funcionava corretamente (e mesmo que funcionasse, teríamos de programar diretamente no RasPi, o que é lento
+                        para ser bom o suficiente).
+                    </p>
+                </div>
+                <div class="info-section">
+                    <h5>Ligar por rede usando SSH (secure shell) <i class="fa fa-times" aria-hidden="true"></i></h5>
+                    <p>
+                        Esta alternativa parecia a alternativa correta a seguir, e quando já íamos todos preparados para ligar por SSH, percebemos duas coisas:
+                        <ol>
+                            <li>
+                                Sem monitor ligado ao RasPi, não há maneira fácil de saber o IP address para fazer a ligação. Ainda pensámos em usar ARP, ver os DHCP requests
+                                ou simplesmente ver no router qual o IP, o que nos leva ao ponto seguinte
+                            </li>
+                            <li>
+                                Estamos numa escola, e por isso, há uma firewall empresarial a estragar-nos os planos! No entanto não desistimos e depois de algumas dores de cabeça,
+                                chegámos a outra alternativa
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+                <div class="info-section">
+                    <h5>Fazer ligação ethernet direta ao computador principal <i class="fa fa-check" aria-hidden="true"></i></h5>
+                    <p>
+                        Depois de alguma pesquisa, <a target="_blank" href="https://pihw.wordpress.com/guides/direct-network-connection/">chegámos a este site</a> que nos explica como ligar diretamente
+                        o computador onde fizemos todo o trabalho ao RasPi! E, como se esta alternativa não fosse suficientemente boa, como o computador estava ligado por wifi à rede, pudemos
+                        partilhar essa ligação e ter internet no RasPi.
+                    </p>
+                </div>
+                <p>Quando finalmente tivemos uma maneira eficaz de comunicar com o computador de bordo, pudemos começar a programar!</p>
+            </div>
+            <div class="info-section">
+                <h3>Computador de bordo - Configuração do Linux e bases</h3>
+                <p>
+                </p>
+            </div>
+            <div class="info-section">
+                <h3>Computador de bordo - Sensores de temperatura e pressão</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15297694/60b90d6a-1b93-11e6-8402-80a98042da64.jpg">
+                </div>
+                <p>
+                    A ligação ao sensor de temperatura/pressão foi fácil de fazer apesar de termos um problema inicial. Utilizámos o BMP180 e como ele ainda não estava soldado,
+                    a ligação falhava às vezes, mas quando percebemos que era esse o problema, foi uma questão de adicionar o código de leitura do sensor ao script principal.
+                </p>
+            </div>
+            <div class="info-section">
+                <h3>Computador de bordo - Câmara digital</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15297862/41b1e008-1b94-11e6-95ad-806b97e14956.jpg">
+                </div>
+                <p>
+                    Apesar de termos uma câmara analógica para transmissão de vídeo em direto, também temos uma câmara digital ligada ao RasPi para gravarmos o vídeo da viagem.
+                    Esta parte também foi muito simples de fazer, uma vez que apenas usamos a câmara oficial do RasPi. Criamos mais uma thread no programa que grava vídeos para o
+                    cartão de memória regularmente.
+                </p>
+            </div>
+            <div class="info-section">
+                <h3>Computador de bordo - GPS</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15297863/41cd4f00-1b94-11e6-907d-794c32d33ea4.jpg">
+                </div>
+                <p>
+                    Esta parte foi a mais difícil porque estávamos a ter erros aleatórios sem os conseguirmos reproduzir e muito estranhos. Começamos por instalar as ferramentas necessárias
+                    para a utilização do GPS (gpsd, gpsd-clients e python-gps). Depois, de muitas tentativas e erros, descobrimos que o nosso GPS estava localizado no /dev/ttyACM0
+                    e usamos essa localização para inicar o gpsd. Também descobrimos que por vezes tínhamos de reiniciar o sistema de GPS e por isso adicionamos lógica para fazer isso regularmente.
+                </p>
+                <p>
+                    Finalmente, para sincronizar as horas com o relógio do GPS usámos várias alternativas. Começámos por usar o NTP, pois este supostamente tem em conta os delays e corrige
+                    a hora, mas acabámos por usar uma simples configuração manual das horas no código, porque o NTP estava cheio de problemas e mais de metade das vezes não funcionava.
+                </p>
+                <p>
+                    Como uma imagem vale mais que mil palavras, então o código utilizado é muito melhor para descrever a solução utilizada, por isso <a target="_blank" href="https://github.com/weirdNox/BEESIC/tree/master/sky/scripts">dêem uma vista de olhos</a>!
+                </p>
+            </div>
+            <div class="info-section">
+                <h3>Website</h3>
+                <div class="parallax">
+                    <img src="https://cloud.githubusercontent.com/assets/11081628/15299807/cef490d8-1b9d-11e6-836c-b3b1bca9653d.png">
+                </div>
+                <p>
+                </p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="links">
+                Segue-nos! <a href="https://github.com/weirdnox/BEESIC" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+            </div>
+            <div id="logos">
+                <a href="https://github.com/weirdnox/BEESIC" target="_blank"><img src="https://opensource.org/files/osi_standard_logo.png"></a>
+                <a href="http://www.esic.pt" target="_blank"><img src="http://www2.nonio.uminho.pt/inescastro/file.php/1/outros/logo_esic.jpg"></a>
+                <a href="https://sigarra.up.pt/feup/pt/web_page.inicial" target="_blank"><img src="https://sigarra.up.pt/feup/pt/WEB_GESSI_DOCS.download_file?p_name=F-881455704/feup_logo.jpg"></a>
+            </div>
+        </div>
+
+        <div id="obfuscator"></div>
+    </body>
+</html>

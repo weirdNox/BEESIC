@@ -64,7 +64,6 @@ body {
 .card p {
     font-size: 15px;
     line-height: 24px;
-    margin-bottom: 16px;
     margin: 0 10px 16px 10px;
     font-weight: 400;
     color: rgba(0,0,0,.87);
@@ -88,15 +87,47 @@ body {
     color: rgba(0,0,0,.87);
 }
 
-.info-section li {
+.info-section ul li {
     padding-left: 10px;
     text-indent: -12px;
 }
 
-.info-section li::before {
+.info-section ul li::before {
     font-size: 20px;
     content: "• ";
     color: #4CAF50;
+}
+
+.info-section li {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0 10px 0 10px;
+    font-weight: 400;
+    color: rgba(0,0,0,.87);
+}
+
+@media (max-width: 620px) {
+    .card h1 {
+        font-size: 25px;
+    }
+    .card h3 {
+        font-size: 20px;
+    }
+    .card h4 {
+        font-size: 18px;
+    }
+    .card h5 {
+        font-size: 16px;
+    }
+    .card p {
+        font-size: 14px;
+    }
+    .info-section li {
+        font-size: 14px;
+    }
+    .card div.info-section {
+        padding: 15px;
+    }
 }
 
 .card .title {
