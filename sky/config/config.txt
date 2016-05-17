@@ -1,0 +1,9 @@
+dtparam=i2c_arm=on
+dtparam=i2s=on
+dtparam=spi=on
+dtparam=audio=on
+start_x=1
+gpu_mem=128
+device_tree=
+disable_audio_dither=1
+disable_camera_led=1
