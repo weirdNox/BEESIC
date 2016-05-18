@@ -36,33 +36,35 @@
         <div class="card page">
             <div class="info-section">
                 <h1>Desenvolvimento do software</h1>
-                <p>Todo o software desenvolvido por nós é Open Source está disponível na <a target="_blank" href="https://github.com/weirdNox/BEESIC">nossa página do Github</a>.</p>
+                <p>
+                    Todo o software desenvolvido por nós é Open Source está disponível na <a target="_blank" href="https://github.com/weirdNox/BEESIC">nossa página do Github</a>.
+                </p>
                 <h3>Computador de bordo - Comunicação</h3>
                 <div class="parallax">
                     <img src="https://cloud.githubusercontent.com/assets/11081628/15297693/60b7e6f6-1b93-11e6-98da-ece329cde470.jpg">
                 </div>
                 <p>
-                    Antes de qualquer trabalho ser feito no Raspberry Pi 2 (RasPi), houve diversos problemas em simplemente comunicar com ele. O RasPi tem 2 saídas de vídeo, HDMI e vídeo composto analógico.
-                    O problema era que na escola apenas tínhamos monitores com entrada VGA. Testámos várias alternativas diferentes até conseguirmos programá-lo estável e eficientemente.
+                    Antes de qualquer trabalho ser feito no Raspberry Pi 2 (RasPi), houve diversos problemas em simplesmente estabelecer a ligação entre o computador de trabalho e o RasPi. Este tem 2 saídas de vídeo, HDMI e vídeo composto analógico, e
+                    o monitor do computador de trabalho apenas tem entrada VGA. Testámos várias alternativas diferentes até conseguirmos programá-lo de forma estável e eficiente.
                 </p>
                 <div class="info-section">
                     <h5>Usar adaptador HDMI-VGA <i class="fa fa-times" aria-hidden="true"></i></h5>
                     <p>
-                        Esta maneira foi rapidamente descartada, uma vez que o adaptador não funcionava corretamente (e mesmo que funcionasse, teríamos de programar diretamente no RasPi, o que é lento
-                        para ser bom o suficiente).
+                        Esta solução foi rapidamente descartada, uma vez que o adaptador não funcionava corretamente (e mesmo que funcionasse, teríamos de programar diretamente no RasPi,
+                        o que tornava o processo lento e isso não era desejado).
                     </p>
                 </div>
                 <div class="info-section">
                     <h5>Ligar por rede usando SSH (secure shell) <i class="fa fa-times" aria-hidden="true"></i></h5>
-                    <p>
-                        Esta alternativa parecia a alternativa correta a seguir, e quando já íamos todos preparados para ligar por SSH, percebemos duas coisas:
+                    <p>a
+                        Esta alternativa parecia a mais correta a seguir mas quando já se preparava a ligação por SSH, percebemos duas coisas:
                         <ol>
                             <li>
-                                Sem monitor ligado ao RasPi, não há maneira fácil de saber o IP address para fazer a ligação. Ainda pensámos em usar ARP, ver os DHCP requests
+                                Sem monitor ligado ao RasPi, não havia maneira fácil de saber o IP address para fazer a ligação. Ainda assim, pensámos em usar ARP, ver os DHCP requests
                                 ou simplesmente ver no router qual o IP, o que nos leva ao ponto seguinte
                             </li>
                             <li>
-                                Estamos numa escola, e por isso, há uma firewall empresarial a estragar-nos os planos! No entanto não desistimos e depois de algumas dores de cabeça,
+                                Na escola existe uma firewall empresarial a estragar-nos os planos! No entanto não desistimos e depois de algumas dores de cabeça,
                                 chegámos a outra alternativa
                             </li>
                         </ol>
@@ -72,7 +74,7 @@
                     <h5>Fazer ligação ethernet direta ao computador principal <i class="fa fa-check" aria-hidden="true"></i></h5>
                     <p>
                         Depois de alguma pesquisa, <a target="_blank" href="https://pihw.wordpress.com/guides/direct-network-connection/">chegámos a este site</a> que nos explica como ligar diretamente
-                        o computador onde fizemos todo o trabalho ao RasPi! E, como se esta alternativa não fosse suficientemente boa, como o computador estava ligado por wifi à rede, pudemos
+                        o computador principal ao RasPi! E, para além de já ser uma boa solução assim só, ainda tivemos um bónus: como o computador estava ligado por wifi à rede, pudemos
                         partilhar essa ligação e ter internet no RasPi.
                     </p>
                 </div>
@@ -84,10 +86,10 @@
                     <img src="https://cloud.githubusercontent.com/assets/11081628/15315191/00977acc-1c0e-11e6-8f3f-c61d1a28bdf8.jpg">
                 </div>
                 <p>
-                    Para esta parte é sempre preciso um bocadinho de magia negra! Usámos a distribuição Jessie Lite do Raspbian e apenas instalámos os mínimos para consumir pouco. Depois
-                    tivemos de configurar tudo! Usámos o systemd para iniciar o nosso programa mal o RasPi iniciasse e configurámos o NTP para
+                    Para esta parte é sempre preciso um bocadinho de magia negra! Usámos a distribuição Jessie Lite do Raspbian e apenas instalámos os mínimos para se obter ganhos no consumo de energia.
+                    Seguidamente, tivemos de configurar tudo! Usámos o systemd para iniciar o nosso programa mal o RasPi iniciasse e configurámos o NTP (Network Time Protocol) para
                     não tentar ir buscar as horas a lado nenhum pois não há internet na estratosfera (e se não fizéssemos isto, iríamos ter horas bem configuradas durante os testes pois tínhamos internet).
-                    Também ativámos o watchdog para fazer restart do RasPi na eventualidade de ele encravar.
+                    Também ativámos o watchdog para fazer restart do RasPi na eventualidade de ele bloquear.
                 </p>
                 <ul>
                     Algumas ferramentas que tivemos de instalar:
@@ -99,7 +101,7 @@
                 </ul>
                 <p>
                     Depois de termos o sistema operativo configurado, começámos a trabalhar no nosso programa. Começámos por fazer um sistema de logging para podermos saber de tudo caso alguma coisa falhasse
-                    e depois começamos a pensar em maneiras de conseguir perceber o que se está a passar no RasPi sem termos contacto direto (no lançamento não há monitores nem ligação ethernet para ninguém!).
+                    e depois começámos a pensar em maneiras de conseguir perceber o que se está a passar no RasPi sem termos contacto direto (no lançamento não há monitores nem ligação ethernet para ninguém!).
                     Chegámos à conclusão que, uma vez que vamos ter transmissão de vídeo em direto, podíamos usar a faixa de áudio para comunicar! E como? Com um speech synthesizer! Sim, temos um
                     <span class="emph">sintetizador de voz</span> que comunica eventuais erros que aconteçam e, para além disso, está constantemente a <span class="emph">dizer as coordenadas provenientes do
                     GPS!</span> Assim, na altura do lançamento, sabemos quais são os sitemas que falharam e os que iniciaram e podemos simplesmente ouvir as coordenadas para não estarmos sempre a ler.
@@ -122,8 +124,8 @@
                 </div>
                 <p>
                     Apesar de termos uma câmara analógica para transmissão de vídeo em direto, também temos uma câmara digital ligada ao RasPi para gravarmos o vídeo da viagem.
-                    Esta parte também foi muito simples de fazer, uma vez que apenas usamos a câmara oficial do RasPi. Criamos agora uma thread que grava vídeos para o
-                    cartão de memória regularmente.
+                    Esta parte também foi muito simples de fazer, uma vez que apenas usámos a câmara oficial do RasPi. Criámos uma thread que grava vídeos para o
+                    cartão de memória regularmente e ficou a funcionar.
                 </p>
                 <p>
                     Uma parte engraçada da câmara é a luzinha que ela tem quando está a gravar. Depois de olharmos para isso, pensámos "Ela tem de ir desligada para não fazer reflexo no vidro, e já agora
@@ -138,8 +140,8 @@
                 </div>
                 <p>
                     Esta parte foi a mais difícil porque estávamos a ter erros aleatórios sem os conseguirmos reproduzir e muito estranhos. Depois, de muitas tentativas e erros,
-                    descobrimos que o nosso GPS estava localizado no /dev/ttyACM0 e usamos essa localização para inicar o gpsd. Também descobrimos que por vezes tínhamos de
-                    reiniciar o sistema de GPS e por isso adicionamos lógica para fazer isso regularmente.
+                    descobrimos que o nosso GPS estava localizado no /dev/ttyACM0 e usámos essa localização para inicar o gpsd. Também descobrimos que por vezes tínhamos de
+                    reiniciar o sistema de GPS e por isso adicionámos lógica para fazer isso regularmente.
                 </p>
                 <p>
                     Finalmente, para sincronizar as horas com o relógio do GPS usámos várias alternativas. Começámos por usar o NTP, pois este supostamente tem em conta os delays e corrige
@@ -161,7 +163,7 @@
                 </div>
                 <p>
                     E para finalizar, ainda tivemos de fazer este site para o projeto! O interessante é que, como queríamos fazer um projeto 100% desenvolvido por nós, foi precisamente isso que fizemos:
-                    <span class="emph">não usamos framework nenhuma e desenvolvemos tudo de raiz!</span> E sim!, este site também é Open Source como o resto do projeto e
+                    <span class="emph">não usámos framework nenhuma e desenvolvemos tudo de raiz!</span> E sim!, este site também é Open Source como o resto do projeto e
                     <a target="_blank" href="https://github.com/weirdNox/BEESIC/tree/gh-pages">está disponível no branch gh-pages do nosso repositório</a>.
                 </p>
                 <p>

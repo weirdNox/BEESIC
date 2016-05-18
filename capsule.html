@@ -12,9 +12,6 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700italic,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
         <script src="main.js"></script>
-
-        <script src="js/three.min.js"></script>
-        <script src="js/ColladaLoader.js"></script>
     </head>
     <body>
         <header>
@@ -40,46 +37,46 @@
             <div class="info-section">
                 <h1>Construção</h1>
                 <h3>Material</h3>
-                <p>O material necessário pode variar de projecto para projecto, por exemplo, podem querer mais sensores (o que aconselhamos) e como tal cabe a vocês encontrar esses materiais. </p>
-                <p>Mas primeiro, os básicos:</p>
+                <p>
+                    Usámos demasiado material para enumerar tudo aqui, mas podemos fazer uma lista não exaustiva; entre muitas outras coisas, usámos:
+                </p>
                 <ul>
-                    <li>O balão em si. Usamos um balão de 1200g para poder rebenter +/- nos 30km de altura.</li>
-                    <li>Um computador de bordo. Usamos o Raspberry2B, Raspberry2A e Raspberry3 também serão uma excelente escolha para o projecto.</li>
-                    <li>?Material isolador?. Lá em cima vai fazer bastante frio e pode danificar o gps, rádio, ect.</li>
-                    <li>Transmissor de rádio. Usamos o Baofeng UV-5R.</li>
-                    <li>Pilhas. 32 devem chegar, mas devem sempre fazer as contas!</li>
-                    <li>TinyTrack3.</li>
-                    <li>Sensores.</li>
-                    <li>Conversores de corrente contínua.</li>
+                    <li>Balão - Um balão de 1200g da Hwoyee</li>
+                    <li>Computador de bordo - O Raspberry Pi 2</li>
+                    <li>Pilhas - No nosso caso foram necessárias apenas 24 pilhas AA (3 packs de 8 que fazem em série ~12V) da Energizer, especificamente as L91 Ultimate Lithium, pois conseguimos otimizar muito bem o consumo geral</li>
+                    <li>GPS - Comprámos um GPS USB para o Raspberry Pi com chipset da u-blox e um GPS4 ligado a um codificador de APRS (TinyTrak3Plus) da Byonics</li>
+                    <li>Rádio - Baofeng UV-5R (usado para a transmissão das coordenadas APRS)</li>
+                    <li>Sensores - Nós usámos sensor de temperatura e pressão (BMP180), mas adicionar mais teria sido interessante</li>
+                    <li>Reguladores de tensão</li>
+                    <li>Antenas - Fizemos as nossas próprias antenas, é preciso ter em consideração a frequência necessária para se fazer a calibração</li>
+                    <li>Câmaras de vídeo - Tivemos uma digital (para se ligar ao RasPi e gravar vídeo) e outra analógica (para transmitir em direto)</li>
+                    <li>Transmissor de vídeo</li>
                 </ul>
-                <p>Devem primeiro planear todo o material necessário que vão usar, saber os preços, descobrir onde comprar e até encomendar pode levar o seu tempo. Se tiverem o material todo logo no início evitam supresas perto do lançamento do balão.
+                <p>
+                    O ideal era que nós tivéssemos tido todas as pecinhas e materiais necessários para a construção logo desde início, mas às vezes dávamos conta que faltava ou um conversor SMA, ou um regulador, etc,
+                    e por vezes pode demorar algum tempo a arranjar o material correto. O nosso fornecedor foi impecável nesse aspeto, pois arranjava sempre tudo muito rapidamente, mas, de qualquer maneira, se estiverem a
+                    construir um balão recomendamos que comecem a ligar os diferentes sistemas e que verifiquem se não falta realmente mais nada! Não vão querer perder a data de lançamento por faltarem peças!
+                </p>
             </div>
             <div class="info-section">
                 <h3>Planeamento</h3>
                 <div class="parallax">
                     <img src="https://cloud.githubusercontent.com/assets/3155049/15076577/4f3d1890-13a2-11e6-9814-fc4393b0759c.png">
                 </div>
-                <p>Têm de começar por planificar o projecto logo no início, como a caixa vai ser feita, quem será encarregue de configurar e programar o computador de bordo, ect. Não substimem qualquer etapa do processo da contrução da caixa, até fazer tubos para os parafusos da caixa demorou tardes.</p>
-                <p>Dividam o projecto em 3 partes para uma fácil orientação de trabalho, sendo elas:</p>
-                <ul>
-                    <li>A construção da caixa.</li>
-                    <li>A transmissão de rádios (gps e de vídeo).</li>
-                    <li>A configuração do computador de bordo</li>
-                </ul>
+                <p>
+                    Começámos por planear tudo desde o início. Separamos o interior em 3 sistemas isolados uns dos outros por segurança, ou seja, se houver um curto circuito num deles e esse deixar de funcionar,
+                    ao menos os outros 2 continuam operacionais. Os sistemas são o de transmissão de dados GPS por APRS (este é o mais crucial, e é obrigatório que permaneça ligado o tempo todo!), o de recolha
+                    de informação no computador de bordo e o de transmissão de vídeo; todos são alimentados por packs de baterias diferentes.
+                </p>
+                <p>
+                    É importante também dividir muito bem o tempo! Não substimem qualquer etapa do processo da contrução da cápsula, até roscar os tubos das prateleiras demorou tardes.
+                </p>
             </div>
             <div class="info-section">
                 <h3>Construção da caixa</h3>
                 <div class="parallax">
                     <img src="https://cloud.githubusercontent.com/assets/3155049/15076449/a8b84f62-13a1-11e6-9859-35256006e9d5.png">
                 </div>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the industry's standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of type and
-                    scrambled it to make a type specimen book. It has survived not only
-                    five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged.
-                </p>
             </div>
         </div>
 
