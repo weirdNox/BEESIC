@@ -18,7 +18,7 @@ gpsd = None
 # NOTE(nox): Speaking
 def speakWorker(msg):
     speakLock.acquire()
-    espeakProcess = subprocess.Popen(["espeak", "-s160", msg, "--stdout"], stdout=subprocess.PIPE)
+    espeakProcess = subprocess.Popen(["espeak", "-s100", msg, "--stdout"], stdout=subprocess.PIPE)
     aplayProcess = subprocess.Popen(["aplay"], stdin=espeakProcess.stdout)
     aplayProcess.communicate()
     speakLock.release()
@@ -116,13 +116,14 @@ def gpsWorker():
 
     gpsFile.write("TIME,LATITUDE (deg+-m),LONGITUDE (deg+-m),ALTITUDE (m+-m),TRACK (deg from true north+-deg),SPEED (m/s+-m/s),CLIMB (m/s+-m/s),MODE,SAT\n")
 
-    cooldown = 15
+    cooldown = 20
     cgpsCooldown = 60
     while True:
-        if cooldown >= 15:
+        if cooldown >= 20:
             cooldown = 0
-            speak("Latitude: {}, Longitude: {}".format(gpsd.fix.latitude,
-                                                       gpsd.fix.longitude))
+            speak("Latitude: {}, Longitude: {}, Altitude: {}".format(gpsd.fix.latitude,
+                                                                     gpsd.fix.longitude,
+                                                                     gpsd.fix.altitude))
             if gpsd.utc is not None:
 	        gpstime = gpsd.utc[0:4] + gpsd.utc[5:7] + gpsd.utc[8:10] + ' ' + gpsd.utc[11:19]
 	        os.system('sudo date --set="%s"' % gpstime)
