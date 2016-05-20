@@ -382,7 +382,8 @@ header > div {
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0;
+    padding-top: 30px;
+    height: 0;
 }
 
 .video-container iframe,
@@ -390,8 +391,8 @@ header > div {
 .video-container embed {
     position: absolute;
     top: 0;
-    left: -40px;
-    width: calc(100% + 80px);
+    left: 0;
+    width: 100%;
     height: 100%;
 }
 
@@ -404,10 +405,12 @@ header > div {
     padding: 15px;
 }
 
-.person img {
+.person div.photo {
     height: 150px;
+    width: 150px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin: 0 auto 10px auto;
+    background-size: cover;
 }
 
 #landing-container {
@@ -514,11 +517,11 @@ header > div {
     }
 }
 
-#countdown {
+.showoff {
     text-align: center;
 }
 
-#countdown h1 {
+.showoff h1 {
     font-size: 70px;
 }
 
@@ -538,7 +541,7 @@ header > div {
 }
 
 @media (max-width: 550px) {
-    #countdown h1 {
+    .showoff h1 {
         font-size: 40px;
     }
     #countdown #counter {
