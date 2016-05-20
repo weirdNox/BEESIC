@@ -1,0 +1,98 @@
+2016-05-19 19:17:10,748 [INFO] =============== RESTART ===============
+2016-05-19 19:17:10,749 [INFO] Starting up...
+2016-05-19 19:17:10,755 [INFO] CAMERA: Starting up
+2016-05-19 19:17:10,758 [INFO] SENSORS: Starting up
+2016-05-19 19:17:10,803 [INFO] GPS: Starting up
+2016-05-19 00:00:00,342 [INFO] CAMERA: Writing video data/videos/1.h264
+2016-05-19 00:00:19,891 [INFO] Done starting systems.
+2016-05-20 08:10:54,593 [INFO] CAMERA: Wrote video data/videos/1.h264
+2016-05-20 08:10:54,595 [INFO] CAMERA: Writing video data/videos/2.h264
+2016-05-20 08:15:53,883 [INFO] CAMERA: Wrote video data/videos/2.h264
+2016-05-20 08:15:53,884 [INFO] CAMERA: Writing video data/videos/3.h264
+2016-05-20 08:20:54,713 [INFO] CAMERA: Wrote video data/videos/3.h264
+2016-05-20 08:20:54,714 [INFO] CAMERA: Writing video data/videos/4.h264
+2016-05-20 08:25:54,373 [INFO] CAMERA: Wrote video data/videos/4.h264
+2016-05-20 08:25:54,374 [INFO] CAMERA: Writing video data/videos/5.h264
+2016-05-20 08:30:54,627 [INFO] CAMERA: Wrote video data/videos/5.h264
+2016-05-20 08:30:54,629 [INFO] CAMERA: Writing video data/videos/6.h264
+2016-05-20 08:35:54,298 [INFO] CAMERA: Wrote video data/videos/6.h264
+2016-05-20 08:35:54,299 [INFO] CAMERA: Writing video data/videos/7.h264
+2016-05-20 08:40:54,863 [INFO] CAMERA: Wrote video data/videos/7.h264
+2016-05-20 08:40:54,865 [INFO] CAMERA: Writing video data/videos/8.h264
+2016-05-20 08:45:55,017 [INFO] CAMERA: Wrote video data/videos/8.h264
+2016-05-20 08:45:55,018 [INFO] CAMERA: Writing video data/videos/9.h264
+2016-05-20 08:50:54,649 [INFO] CAMERA: Wrote video data/videos/9.h264
+2016-05-20 08:50:54,650 [INFO] CAMERA: Writing video data/videos/10.h264
+2016-05-20 08:55:55,262 [INFO] CAMERA: Wrote video data/videos/10.h264
+2016-05-20 08:55:55,264 [INFO] CAMERA: Writing video data/videos/11.h264
+2016-05-20 09:00:55,250 [INFO] CAMERA: Wrote video data/videos/11.h264
+2016-05-20 09:00:55,251 [INFO] CAMERA: Writing video data/videos/12.h264
+2016-05-20 09:05:55,469 [INFO] CAMERA: Wrote video data/videos/12.h264
+2016-05-20 09:05:55,470 [INFO] CAMERA: Writing video data/videos/13.h264
+2016-05-20 09:10:55,341 [INFO] CAMERA: Wrote video data/videos/13.h264
+2016-05-20 09:10:55,342 [INFO] CAMERA: Writing video data/videos/14.h264
+2016-05-20 09:15:55,750 [INFO] CAMERA: Wrote video data/videos/14.h264
+2016-05-20 09:15:55,751 [INFO] CAMERA: Writing video data/videos/15.h264
+2016-05-20 09:20:56,090 [INFO] CAMERA: Wrote video data/videos/15.h264
+2016-05-20 09:20:56,091 [INFO] CAMERA: Writing video data/videos/16.h264
+2016-05-20 09:25:55,958 [INFO] CAMERA: Wrote video data/videos/16.h264
+2016-05-20 09:25:55,959 [INFO] CAMERA: Writing video data/videos/17.h264
+2016-05-20 09:30:56,307 [INFO] CAMERA: Wrote video data/videos/17.h264
+2016-05-20 09:30:56,308 [INFO] CAMERA: Writing video data/videos/18.h264
+2016-05-20 09:35:55,855 [INFO] CAMERA: Wrote video data/videos/18.h264
+2016-05-20 09:35:55,856 [INFO] CAMERA: Writing video data/videos/19.h264
+2016-05-20 09:40:56,700 [INFO] CAMERA: Wrote video data/videos/19.h264
+2016-05-20 09:40:56,702 [INFO] CAMERA: Writing video data/videos/20.h264
+2016-05-20 09:17:10,207 [INFO] =============== RESTART ===============
+2016-05-20 09:17:10,209 [INFO] Starting up...
+2016-05-20 09:17:10,215 [INFO] CAMERA: Starting up
+2016-05-20 09:17:10,219 [INFO] SENSORS: Starting up
+2016-05-20 09:17:10,233 [INFO] GPS: Starting up
+2016-05-20 00:00:00,267 [INFO] CAMERA: Writing video data/videos/21.h264
+2016-05-20 00:00:19,805 [INFO] Done starting systems.
+2016-05-20 09:48:32,386 [INFO] CAMERA: Wrote video data/videos/21.h264
+2016-05-20 09:48:32,387 [INFO] CAMERA: Writing video data/videos/22.h264
+2016-05-20 09:53:32,523 [INFO] CAMERA: Wrote video data/videos/22.h264
+2016-05-20 09:53:32,524 [INFO] CAMERA: Writing video data/videos/23.h264
+2016-05-20 09:58:32,536 [INFO] CAMERA: Wrote video data/videos/23.h264
+2016-05-20 09:58:32,538 [INFO] CAMERA: Writing video data/videos/24.h264
+2016-05-20 10:03:32,109 [INFO] CAMERA: Wrote video data/videos/24.h264
+2016-05-20 10:03:32,111 [INFO] CAMERA: Writing video data/videos/25.h264
+2016-05-20 10:08:32,930 [INFO] CAMERA: Wrote video data/videos/25.h264
+2016-05-20 10:08:32,931 [INFO] CAMERA: Writing video data/videos/26.h264
+2016-05-20 10:13:32,786 [INFO] CAMERA: Wrote video data/videos/26.h264
+2016-05-20 10:13:32,787 [INFO] CAMERA: Writing video data/videos/27.h264
+2016-05-20 10:18:32,819 [INFO] CAMERA: Wrote video data/videos/27.h264
+2016-05-20 10:18:32,821 [INFO] CAMERA: Writing video data/videos/28.h264
+2016-05-20 10:23:34,433 [INFO] CAMERA: Wrote video data/videos/28.h264
+2016-05-20 10:23:34,434 [INFO] CAMERA: Writing video data/videos/29.h264
+2016-05-20 10:24:58,877 [ERROR] SENSORS: BMP180 failed
+2016-05-20 10:28:34,662 [INFO] CAMERA: Wrote video data/videos/29.h264
+2016-05-20 10:28:34,663 [INFO] CAMERA: Writing video data/videos/30.h264
+2016-05-20 10:33:35,462 [INFO] CAMERA: Wrote video data/videos/30.h264
+2016-05-20 10:33:35,464 [INFO] CAMERA: Writing video data/videos/31.h264
+2016-05-20 10:38:35,634 [INFO] CAMERA: Wrote video data/videos/31.h264
+2016-05-20 10:38:35,635 [INFO] CAMERA: Writing video data/videos/32.h264
+2016-05-20 10:43:34,809 [INFO] CAMERA: Wrote video data/videos/32.h264
+2016-05-20 10:43:34,811 [INFO] CAMERA: Writing video data/videos/33.h264
+2016-05-20 10:48:35,497 [INFO] CAMERA: Wrote video data/videos/33.h264
+2016-05-20 10:48:35,498 [INFO] CAMERA: Writing video data/videos/34.h264
+2016-05-20 10:53:35,495 [INFO] CAMERA: Wrote video data/videos/34.h264
+2016-05-20 10:53:35,496 [INFO] CAMERA: Writing video data/videos/35.h264
+2016-05-20 10:56:40,988 [INFO] SENSORS: BMP180 recovered
+2016-05-20 10:58:35,947 [INFO] CAMERA: Wrote video data/videos/35.h264
+2016-05-20 10:58:35,949 [INFO] CAMERA: Writing video data/videos/36.h264
+2016-05-20 11:03:35,608 [INFO] CAMERA: Wrote video data/videos/36.h264
+2016-05-20 11:03:35,609 [INFO] CAMERA: Writing video data/videos/37.h264
+2016-05-20 11:08:36,182 [INFO] CAMERA: Wrote video data/videos/37.h264
+2016-05-20 11:08:36,184 [INFO] CAMERA: Writing video data/videos/38.h264
+2016-05-20 11:13:36,361 [INFO] CAMERA: Wrote video data/videos/38.h264
+2016-05-20 11:13:36,362 [INFO] CAMERA: Writing video data/videos/39.h264
+2016-05-20 11:18:36,414 [INFO] CAMERA: Wrote video data/videos/39.h264
+2016-05-20 11:18:36,415 [INFO] CAMERA: Writing video data/videos/40.h264
+2016-05-20 11:23:36,704 [INFO] CAMERA: Wrote video data/videos/40.h264
+2016-05-20 11:23:36,705 [INFO] CAMERA: Writing video data/videos/41.h264
+2016-05-20 11:28:36,578 [INFO] CAMERA: Wrote video data/videos/41.h264
+2016-05-20 11:28:36,580 [INFO] CAMERA: Writing video data/videos/42.h264
+2016-05-20 11:33:36,962 [INFO] CAMERA: Wrote video data/videos/42.h264
+2016-05-20 11:33:36,963 [INFO] CAMERA: Writing video data/videos/43.h264
